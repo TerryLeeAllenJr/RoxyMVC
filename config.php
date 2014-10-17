@@ -18,6 +18,7 @@ if(_ENV == 'dev'){
 // Always provide a TRAILING SLASH (/) AFTER A PATH
 define('URL', 'http://nbcnewschannel.dev/');
 define('ADMIN_URL','http://nbcnewschannel.dev/');
+define('DIR',$_SERVER['DOCUMENT_ROOT'].'/');
 define('LIBS', $_SERVER['DOCUMENT_ROOT'].'/core/');
 define('PATH',$_SERVER['DOCUMENT_ROOT']."/public/");
 define('VERSION','1.0.1');

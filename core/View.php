@@ -17,7 +17,7 @@ class View
 
     public function render($name, $noInclude = false)
     {
-        require_once 'views/' . $name . '.php';
+        require_once DIR.'views/' . $name . '.php';
     }
 
 }

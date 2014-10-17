@@ -1,6 +1,7 @@
 {
     "require": {
-        "predis/predis": "1.1.*@dev"
+        "predis/predis": "1.1.*@dev",
+        "respect/rest": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*"
@@ -10,7 +11,8 @@
         "psr-4":
         {
             "Core\\": "core",
-            "Core\\Models\\": "models"
+            "Core\\Models\\": "models",
+            "Core\\Controllers\\": "controllers"
         }
     }
 }

@@ -10,18 +10,15 @@ require 'config.php';
 require 'util/Auth.php';
 require 'vendor/autoload.php';
 
-/*
-// Also spl_autoload_register (Take a look at it if you like)
-function __autoload($class)
-{
-    $file = LIBS . $class . ".php";
-    if (file_exists($file)) {
-        require $file;
-    }
+use Respect\Rest\Router;
+$r3 = new Router;
 
-}
-*/
+$r3->get('/', function() {
+    $controller = new \Core\Controllers\IndexController;
+    $controller->index();
+});
 
-// Load the Bootstrap!
-$bootstrap = new Core\Bootstrap;
-$bootstrap->init();
+$r3->get('/*', function() {
+    $controller = new \Core\Controllers\ErrorController;
+    $controller->index();
+});
