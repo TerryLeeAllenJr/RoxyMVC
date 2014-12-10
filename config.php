@@ -7,9 +7,9 @@
  */
 
 // Environment
+define('_ENV','DEV');
 
-define('_ENV','dev');
-if(_ENV == 'dev'){
+if(_ENV == 'DEV'){
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
 }
@@ -22,12 +22,36 @@ define('LIBS', $_SERVER['DOCUMENT_ROOT'].'/core/');
 define('PATH',$_SERVER['DOCUMENT_ROOT']."/public/");
 define('VERSION','1.0.1');
 
+
 // DB SETTINGS.
-define('DB_TYPE', 'mysql');
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'nbcnewschannel');
-define('DB_USER', 'root');
-define('DB_PASS', 'Begaeen123!');
+switch(_ENV){
+    case 'PROD':
+        define('DB_TYPE', 'mysql');
+        define('DB_HOST', '127.0.0.1');
+        define('DB_NAME', 'nbcnewschannel');
+        define('DB_USER', 'root');
+        define('DB_PASS', 'Begaeen123!');
+        break;
+
+    case 'STAGING':
+        define('DB_TYPE', 'mysql');
+        define('DB_HOST', '127.0.0.1');
+        define('DB_NAME', 'nbcnewschannel');
+        define('DB_USER', 'root');
+        define('DB_PASS', 'Begaeen123!');
+        break;
+
+    case 'DEV':
+        define('DB_TYPE', 'mysql');
+        define('DB_HOST', '127.0.0.1');
+        define('DB_NAME', 'roxyMVC_local');
+        define('DB_USER', 'root');
+        define('DB_PASS', '123');
+        break;
+
+}
+
+
 
 // NSEncrypt Keys, DO NOT CHANGE ONCE IN PRODUCTION!!! THIS WILL BREAK THE APP.
 define("AES_KEY", "abcdefghijuklmno0123456789012345");
